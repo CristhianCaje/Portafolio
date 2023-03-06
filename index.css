@@ -1,0 +1,78 @@
+header{
+    width: 80%;
+    margin: 0 auto;
+}
+nav{
+    text-align: center;
+}
+nav ul{
+    display: inline-block;
+    align-items: center;
+}
+nav ul li{
+    float: left;
+    list-style: none;
+    margin: 0px 30px 0px 30px;
+}
+nav ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #5ef;
+    display: table;
+}
+nav ul li a::after{
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: #339;
+    transform: scale(0,1);
+    transform-origin: center;
+    transition: transform 1s;
+}
+nav ul li a:hover{
+    color: #339;
+}
+nav ul li a:hover::after{
+    transform: scale(1,1);
+}
+.center{
+    text-align: center;
+}
+video{
+    width: 150px;
+    height: 150px;
+}
+div img{
+    width: 180px;
+    height: 180px;
+    margin: 20px;
+}
+body{
+    width: 80%;
+    margin: 0 auto; 
+}
+main{
+    text-align: center;
+}
+main h1{
+    font-family: helvetica;
+    color: #5ef;
+}
+main div{
+    margin: 0 auto;
+    display: block;
+    width: 900px;
+}
+.work{
+    display: block;
+    width: 350px;
+    height: 250px;
+}
+main form{
+    display: block;
+    margin: 0 auto;
+    width: 900px;
+}
+main div h3{
+ 
+}
