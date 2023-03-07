@@ -4,6 +4,8 @@ header{
 }
 nav{
     text-align: center;
+    background-color: #339;
+    border-radius: 10px;
 }
 nav ul{
     display: inline-block;
@@ -71,8 +73,45 @@ main div{
 main form{
     display: block;
     margin: 0 auto;
-    width: 900px;
+    width: 450px;
+    background-color: #339;
+    color: #5ef;
+    border-radius: 10px;
 }
 main div h3{
  
+}
+button{
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+label{
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+}
+input{
+    margin: 5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: #339;
+    background-color: #5ef;
+    outline: none;
+    border-radius: 5px;
+}
+input::placeholder{
+    color:#339;
+}
+input:focus{
+    background-color: #339;
+    color: #5ef;
+}
+footer{
+    display: flex;
+    background-color: #5ef;
+    border-radius: 10px;
+}
+footer div{
+    margin: 0 100px 0 100px ;
 }
