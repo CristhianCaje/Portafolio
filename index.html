@@ -7,8 +7,6 @@
     <title>Index</title>
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <header>
     <nav>
@@ -44,17 +42,17 @@
             <h3>Analyst IT</h3>
         </div>
         <h1>Formulario</h1>
-        <form action="">
+        <form action="" id="formulario">
             <label for="">Nombre y Apellido:</label>
-            <input type="text" placeholder="Nombre y Apellido"> <br>
+            <input type="text" placeholder="Nombre y Apellido" name="nombre" id="nom"> <br>
             <label for="">Correo Electronico:</label>
-            <input type="email" placeholder="Email"><br>
+            <input type="email" placeholder="Email" name="email"><br>
             <label for="">Celular:</label>
-            <input type="number" placeholder="Celular"><br>
+            <input type="number" placeholder="Celular" name="celular"><br>
             <label for="">Descripción:</label>
-            <textarea name="" id="" placeholder="Descripción" ></textarea>
+            <input type="text" placeholder="Descripción" name="descripcion">
         </form>
-        <input onclick="enviarAlerta()" type="submit" value="Enviar">
+        <input type="submit" value="Enviar">
     </main>
     <footer>
         <div>
@@ -74,3 +72,5 @@
     </footer>
 </body>
 </html>
+<script src="index.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
