@@ -171,3 +171,13 @@ footer div{
 .correcto{
     border: solid 2px green;
 }
+#mes{
+    color: red; 
+    border: solid blue;
+    width: 490px;
+    position: relative;
+    left: 66px;
+}
+.oculto{
+    display: none;
+}
