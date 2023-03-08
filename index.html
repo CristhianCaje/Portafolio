@@ -7,11 +7,10 @@
     <title>Index</title>
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <header>
-    <div class="center">
-        <video src="src/logo/logotipo.mp4" autoplay loop></video>
-    </div>
     <nav>
         <ul>
             <li><a href="">Inicio</a></li>
@@ -24,7 +23,7 @@
 <body>
     <main>
         <h1>Conocimientos</h1>
-        <div>
+        <div class="logos">
             <img src="src/logo/html-5.png" alt="">
             <img src="src/logo/css-3.png" alt="">
             <img src="src/logo/js.png" alt="">
@@ -53,9 +52,9 @@
             <label for="">Celular:</label>
             <input type="number" placeholder="Celular"><br>
             <label for="">Descripción:</label>
-            <input type="text" placeholder="Descripción"><br>
+            <textarea name="" id="" placeholder="Descripción" ></textarea>
         </form>
-        <input type="submit" value="Enviar">
+        <input onclick="enviarAlerta()" type="submit" value="Enviar">
     </main>
     <footer>
         <div>
@@ -63,11 +62,11 @@
             <p>Ingeniero en Informatica</p>
             <p>Desarrollador Web</p>
         </div>
-        <div>
-            <p><a href=""></a>Linkedin</p>
-            <p><a href=""></a>Instagram</p>
-            <p><a href=""></a>Facebook</p>
-            <p><a href=""></a>WhatsApp</p>
+        <div class="redes">
+            <img src="src/logo/facebook.png" alt="">
+            <img src="src/logo/instagram.png" alt="">
+            <img src="src/logo/linkedin.png" alt="">
+            <img src="src/logo/whatsapp.png" alt="">
         </div>
         <div class="ad">
             <p>Politicas de Uso</p>

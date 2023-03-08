@@ -1,11 +1,9 @@
-header{
-    width: 80%;
-    margin: 0 auto;
-}
 nav{
     text-align: center;
-    background-color: #339;
-    border-radius: 10px;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 nav ul{
     display: inline-block;
@@ -19,20 +17,20 @@ nav ul li{
 nav ul li a{
     text-decoration: none;
     font-size: 20px;
-    color: #5ef;
+    color: #ddd;
     display: table;
 }
 nav ul li a::after{
     content: "";
     display: block;
     height: 2px;
-    background-color: #339;
+    background-color: #fff;
     transform: scale(0,1);
     transform-origin: center;
     transition: transform 1s;
 }
 nav ul li a:hover{
-    color: #339;
+    color: #fff;
 }
 nav ul li a:hover::after{
     transform: scale(1,1);
@@ -40,17 +38,16 @@ nav ul li a:hover::after{
 .center{
     text-align: center;
 }
-video{
-    width: 150px;
-    height: 150px;
+.logos{
+    display: inline-block;
 }
 div img{
+    display: inline-block;
     width: 180px;
     height: 180px;
-    margin: 20px;
+    margin: 50px;
 }
 body{
-    width: 80%;
     margin: 0 auto; 
 }
 main{
@@ -58,7 +55,7 @@ main{
 }
 main h1{
     font-family: helvetica;
-    color: #5ef;
+    color: #333;
 }
 main div{
     margin: 0 auto;
@@ -73,13 +70,10 @@ main div{
 main form{
     display: block;
     margin: 0 auto;
-    width: 450px;
-    background-color: #339;
-    color: #5ef;
+    width: 500px;
+    background-color: #333;
+    color: #ddd;
     border-radius: 10px;
-}
-main div h3{
- 
 }
 button{
     margin-bottom: 50px;
@@ -89,29 +83,85 @@ label{
     display: inline-block;
     width: 150px;
     text-align: left;
+    height: 30px;
 }
 input{
-    margin: 5px;
+    margin: 20px;
+    width: 250px;
+    height: 30px;
     border-top: none;
     border-left: none;
     border-right: none;
-    color: #339;
-    background-color: #5ef;
+    border-bottom:solid 2px ;
+    color: #333;
+    background-color: #ddd;
     outline: none;
     border-radius: 5px;
 }
 input::placeholder{
-    color:#339;
+    color:#333;
 }
 input:focus{
-    background-color: #339;
-    color: #5ef;
+    background-color: #333;
+    color: #ddd;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+textarea{
+    margin: 20px;
+    width: 250px;
+    height: 60px;
+    resize: none;
+    background-color: #ddd;
+    color: #333;
+    border-radius: 5px;
+}
+textarea::placeholder{
+    color: #333;
+}
+textarea:focus{
+    background-color: #333;
+    color: #ddd;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 2px;
 }
 footer{
     display: flex;
-    background-color: #5ef;
-    border-radius: 10px;
+    background-color: #333;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px ;
+    height: 100%;
+    width: 100%;
+}
+footer p{
+    color: #ddd;
 }
 footer div{
-    margin: 0 100px 0 100px ;
+    margin: 0 auto;
+}
+.redes{
+    display: flex;
+}
+.redes img{
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    margin: auto 5px;
+}
+.swal-button {
+    background-color: #333;
+}
+.swal-button {
+  padding: 7px 19px;
+  border-radius: 2px;
+  background-color: #333;
+  font-size: 12px;
+  border: 1px solid #3e549a;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
 }
