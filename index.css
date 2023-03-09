@@ -69,9 +69,6 @@ p{
     }
 }
 /*Experiencia*/
-.experiencia{
-    
-}
 .experiencia img{
     width: 250px;
     height: 200px;
@@ -79,5 +76,40 @@ p{
 .experiencia img:hover{
     width: 300px;
     height: 250px;
-    transition: 0.8s;
+    transition: all 1.2s;
+}
+/*contacto*/
+.contacto-form label{
+    font-family: 'Source Sans Pro', sans-serif bold;
+    font-size: 20px;
+    width: 200px;
+    text-align: left;
+    margin: 20px;
+}
+.contacto-form input{
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    width: 400px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.contacto-form input:focus{
+    background-color: #000;
+    color: #fff;
+}
+.contacto{
+    background-color: #f5f6f7;
+}
+.contacto-form{
+    margin: 20px 10px 20px 10px;
+    background-color: #000;
+    color: #fff;
+}
+/*footer*/
+footer img{
+    width: 50px;
 }
