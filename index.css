@@ -114,6 +114,9 @@ input[type=number]::-webkit-outer-spin-button {
     width: 900px;
     border-radius: 25px;
 }
+.bb{
+    margin-bottom: 5px;
+}
 @media screen and (max-width:767px) {
     .contacto-form{
         width: 100%;
@@ -132,7 +135,6 @@ input[type=number]::-webkit-outer-spin-button {
         width: 200px;
         text-align: left;
     }
-    
 }
 /*footer*/
 footer img{
