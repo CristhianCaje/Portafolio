@@ -33,3 +33,27 @@ datos.nombre.addEventListener('blur', (e) => validarCampos("Favor completar su N
 datos.email.addEventListener('blur', (e) => validarCampos("Favor completar su Correo electronico",e));
 datos.telefono.addEventListener('blur', (e) => validarCampos("Favor completar su Numero de Telefono",e));
 datos.mensaje.addEventListener('blur', (e) => validarCampos("Favor agragar el mensaje que quiere enviar",e));
+
+/*Experiencia Laboral*/
+const fulExperiencia1 = document.getElementById('fulExperiencia1');
+const fulExperiencia2 = document.getElementById('fulExperiencia2');
+const fulExperiencia3 = document.getElementById('fulExperiencia3');
+
+openExperiencia1 = () => {
+    fulExperiencia1.style.display = 'flex';
+}
+closeExperiencia1 = () =>{
+    fulExperiencia1.style.display = "none";
+}
+openExperiencia2 = () => {
+    fulExperiencia2.style.display = 'flex';
+}
+closeExperiencia2 = () =>{
+    fulExperiencia2.style.display = "none";
+}
+openExperiencia3 = () => {
+    fulExperiencia3.style.display = 'flex';
+}
+closeExperiencia3 = () =>{
+    fulExperiencia3.style.display = "none";
+}
