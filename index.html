@@ -20,31 +20,35 @@
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
               <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="#">Inicio</a>
+                <a class="nav-link " aria-current="page" href="#inicio">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Conocimiento</a>
+                <a class="nav-link" href="#conocimiento">Conocimiento</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Experiencia Laboral
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                  <li><a class="dropdown-item" href="#">Banco GNB</a></li>
-                  <li><a class="dropdown-item" href="#">CitiBank</a></li>
-                  <li><a class="dropdown-item" href="#">SARCOM S.A.</a></li>
+                  <li><a class="dropdown-item" href="#bancoGnb">Banco GNB</a></li>
+                  <li><a class="dropdown-item" href="#citiBank">CitiBank</a></li>
+                  <li><a class="dropdown-item" href="#sarcom">SARCOM S.A.</a></li>
                 </ul>
               </li> 
               <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
+                <a class="nav-link" href="#contacto">Contacto</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <section class="hero">
+      <section id="inicio" class="hero">
+        <div class="ful-img" id="fulImgBox">
+          <img src="src/IMG_20230110_111333.jpg" id="fulImg" alt="">
+          <span class="cerrar" onclick="closeImg()">X</span>
+        </div>
         <div class="hero-principal d-flex flex-column justify-content-center align-items-center">
-            <img class="hero-imagen-personal" src="src/IMG_20230110_111333.jpg" alt="">
+            <img onclick="openFulImg()" id="personal" class="hero-imagen-personal" src="src/IMG_20230110_111333.jpg" alt="">
             <h1>Hola, soy Cristhian Quiñonez</h1>
             <h2>Desarrollador Web</h2>
             <p><b>Un poco sobre mi:</b> Desde los 8 años empecé a practicar al futbol en el club Cerro Porteño hasta los 20 años, a partir de los 10 
@@ -54,7 +58,7 @@
                 estoy terminando mi carrera, me encuentro en el desarrollo de mi tesis.                
             </p>
         </div>
-        <div class="hero-inferior">
+        <div id="conocimiento" class="hero-inferior">
             <img src="src/logo/html-5.png" alt="html-5">
             <img src="src/logo/css-3.png" alt="css">
             <img src="src/logo/js.png" alt="javascrip">
@@ -74,18 +78,18 @@
             <div class="row">
               <h1 class="bg-dark blanco">Lugares en los que he trabajado</h1>
                 <div class="col-12 col-md-4">
-                    <img  id="trabajo"  src="src/logo/gnb.webp" alt="GNB">
+                    <img  id="bancoGnb"  src="src/logo/gnb.webp" alt="GNB">
                 </div>
-                <div class="col-12 col-md-4">
+                <div id="citiBank" class="col-12 col-md-4">
                     <img src="src/logo/citi.webp" alt="">
                 </div>
-                <div class="col-12 col-md-4">
+                <div id="sarcom" class="col-12 col-md-4">
                     <img src="src/logo/Sarcom.png" alt="">
                 </div>
             </div>
         </div>
       </section>
-      <section class="contacto">
+      <section id="contacto" class="contacto">
         <div class="contacto-form text-center">
             <div class="row">
               <h1>Contactame</h1>
@@ -106,7 +110,7 @@
                     <input type="text">
                 </div>
             </div>
-            <button onclick="welcome()" type="button" class="btn btn-outline-success bb">Enviar</button>
+            <button type="button" class="btn btn-outline-success bb">Enviar</button>
         </div>
       </section>
       <footer class="bg-dark blanco">

@@ -27,6 +27,30 @@ p{
     }
 }
 /*hero*/
+.ful-img{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0,0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+.ful-img img{
+    width: 90%;
+    max-width: 400px;
+}
+.cerrar{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
 .hero{
     background-color: #f5f6f7;
     text-align: center;
@@ -45,6 +69,7 @@ p{
     height: 200px;
     border-radius: 50%;
     margin: 20px;
+    cursor: pointer;
 }
 @media screen and (max-width:767px){
     .hero-imagen-personal{
