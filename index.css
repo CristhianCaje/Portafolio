@@ -94,9 +94,32 @@ p{
     }
 }
 /*Experiencia*/
+.ful-experiencia{
+    background-color: rgba(255, 253, 253, 0.9);
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+.cerrar2{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    font-size: 30px;
+    color: #666;
+    cursor: pointer;
+}
+.ful-experiencia p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: #000;
+    padding: 10px;
+}
 .experiencia img{
     width: 250px;
     height: 200px;
+    cursor: pointer;
 }
 .blanco{
     color: #fff;
