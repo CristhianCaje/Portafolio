@@ -28,8 +28,8 @@ const validarCampos = (menssage, e) =>{
             inp.nextElementSibling.classList.remove('fail')
             inp.nextElementSibling.innerText = '';
         }
-}
+}   
 datos.nombre.addEventListener('blur', (e) => validarCampos("Favor completar su Nombre y Apellido",e));
 datos.email.addEventListener('blur', (e) => validarCampos("Favor completar su Correo electronico",e));
 datos.telefono.addEventListener('blur', (e) => validarCampos("Favor completar su Numero de Telefono",e));
-datos.mensaje.addEventListener('blur', (e) => validarCampos("Favor agragar el mensaje que quiere enviar",e));
+datos.mensaje.addEventListener('blur', (e) => validarCampos("Favor agregar el mensaje que quiere enviar",e));
