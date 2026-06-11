@@ -1,0 +1,1521 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const linkedinUrl =
+  "https://www.linkedin.com/in/cristhian-qui%C3%B1onez-911b04217/";
+const githubUrl = "#";
+const emailUrl = "mailto:contacto@itproject.com.py";
+
+const navItems = [
+  { href: "#perfil", label: { es: "Perfil", en: "Profile" } },
+  { href: "#skills", label: { es: "Skills", en: "Skills" } },
+  { href: "#proyectos", label: { es: "Proyectos", en: "Projects" } },
+  { href: "#experiencia", label: { es: "Experiencia", en: "Experience" } },
+  { href: "#contacto", label: { es: "Contacto", en: "Contact" } },
+];
+
+const highlights = [
+  {
+    value: "Infra",
+    label: {
+      es: "Servidores, redes, virtualización y continuidad",
+      en: "Servers, networks, virtualization and continuity",
+    },
+  },
+  {
+    value: "Sec",
+    label: {
+      es: "FortiGate, FortiPAM, Check Point, CIS Controls",
+      en: "FortiGate, FortiPAM, Check Point, CIS Controls",
+    },
+  },
+  {
+    value: "Data",
+    label: {
+      es: "Power BI, SQL Server, Excel y automatización",
+      en: "Power BI, SQL Server, Excel and automation",
+    },
+  },
+  {
+    value: "Dev",
+    label: {
+      es: "Next.js, NestJS, C#, FastAPI y APIs",
+      en: "Next.js, NestJS, C#, FastAPI and APIs",
+    },
+  },
+];
+
+const skills = [
+  {
+    title: {
+      es: "Infraestructura & Seguridad",
+      en: "Infrastructure & Security",
+    },
+    icon: "🛡️",
+    items: [
+      "Windows Server",
+      "Linux / Rocky",
+      "FortiGate",
+      "FortiPAM",
+      "Check Point",
+      "Veeam",
+      "VMware",
+      "AWS",
+      "Microsoft 365",
+      "Entra ID",
+      "Purview",
+      "LOG360",
+    ],
+  },
+  {
+    title: { es: "Datos & Automatización", en: "Data & Automation" },
+    icon: "📊",
+    items: [
+      "SQL Server",
+      "MySQL / MariaDB",
+      "PostgreSQL",
+      "Power BI",
+      "Excel avanzado",
+      "ETL",
+      "Reportes ejecutivos",
+      "Dashboards",
+      "Python",
+    ],
+  },
+  {
+    title: { es: "Desarrollo Web", en: "Web Development" },
+    icon: "⚙️",
+    items: [
+      "Next.js",
+      "NestJS",
+      "ASP.NET MVC",
+      "C#",
+      "FastAPI",
+      "Docker",
+      "Nginx",
+      "APIs REST",
+      "Bootstrap",
+      "Git",
+    ],
+  },
+];
+
+const projects = [
+  {
+    tag: { es: "Seguridad / ITSM", en: "Security / ITSM" },
+    title: {
+      es: "Integración FortiPAM + ServiceDesk Plus",
+      en: "FortiPAM + ServiceDesk Plus Integration",
+    },
+    description: {
+      es: "Middleware en NestJS para crear solicitudes, controlar aprobaciones y habilitar secretos privilegiados bajo flujo auditado.",
+      en: "NestJS middleware to create requests, control approvals and release privileged secrets through an auditable workflow.",
+    },
+    stack: ["NestJS", "Zoho SDP", "FortiPAM API", "OAuth2"],
+  },
+  {
+    tag: { es: "Analítica / IA", en: "Analytics / AI" },
+    title: {
+      es: "Agente IA para consultas SQL Server",
+      en: "AI Agent for SQL Server Queries",
+    },
+    description: {
+      es: "Sistema con FastAPI y Ollama para responder preguntas naturales contra bases SQL, con validación segura de consultas SELECT.",
+      en: "FastAPI and Ollama system that answers natural language questions against SQL databases with safe SELECT query validation.",
+    },
+    stack: ["FastAPI", "SQL Server", "Ollama", "Next.js"],
+  },
+  {
+    tag: { es: "Infraestructura", en: "Infrastructure" },
+    title: { es: "Nginx HA para DMZ y CORE", en: "Nginx HA for DMZ and CORE" },
+    description: {
+      es: "Separación de reverse proxy de los servidores de aplicaciones, con balanceo, certificados y arquitectura preparada para alta disponibilidad.",
+      en: "Reverse proxy separation from application servers with load balancing, certificates and an architecture prepared for high availability.",
+    },
+    stack: ["Nginx", "Linux", "Docker", "SSL"],
+  },
+  {
+    tag: { es: "Backup / Continuidad", en: "Backup / Continuity" },
+    title: {
+      es: "Repositorio Veeam en HP DL360 Gen11",
+      en: "Veeam Repository on HP DL360 Gen11",
+    },
+    description: {
+      es: "Diseño de RAID para sistema operativo y datos, hardening de Rocky Linux y preparación de repositorio para respaldos corporativos.",
+      en: "RAID design for operating system and data, Rocky Linux hardening and repository preparation for enterprise backups.",
+    },
+    stack: ["Veeam", "Rocky Linux", "RAID", "HP ProLiant"],
+  },
+  {
+    tag: { es: "Gobierno TI", en: "IT Governance" },
+    title: {
+      es: "Implementación CIS Controls",
+      en: "CIS Controls Implementation",
+    },
+    description: {
+      es: "Normalización de procedimientos, matrices de evidencias, trazabilidad, brechas y excepciones para controles IG1/IG2.",
+      en: "Standardized procedures, evidence matrices, traceability, gap analysis and exception registers for IG1/IG2 controls.",
+    },
+    stack: ["CIS Controls", "AD", "Entra ID", "ServiceDesk"],
+  },
+  {
+    tag: { es: "Desarrollo", en: "Development" },
+    title: {
+      es: "Sistema web veterinario ALVET",
+      en: "ALVET Veterinary Web System",
+    },
+    description: {
+      es: "Aplicación ASP.NET MVC para clientes, animales, médicos, citas, órdenes de servicio, facturación, stock y reportes.",
+      en: "ASP.NET MVC application for clients, pets, doctors, appointments, service orders, invoicing, inventory and reports.",
+    },
+    stack: ["ASP.NET MVC", "C#", "MySQL", "DataTables"],
+  },
+];
+
+const experience = [
+  {
+    role: { es: "Analista de Infraestructura", en: "Infrastructure Analyst" },
+    company: "Bolsa de Valores y Productos de Asunción",
+    period: { es: "Actualidad", en: "Current" },
+    detail: {
+      es: "Operación de infraestructura crítica, seguridad, plataformas Microsoft, redes, VPN, monitoreo, continuidad y soporte a ambientes productivos y de test.",
+      en: "Operation of critical infrastructure, security, Microsoft platforms, networks, VPN, monitoring, continuity and support for production and test environments.",
+    },
+  },
+  {
+    role: { es: "Analista de Datos / TI", en: "Data / IT Analyst" },
+    company: "Fundación Capital",
+    period: { es: "Experiencia previa", en: "Previous experience" },
+    detail: {
+      es: "Construcción de reportes, análisis de información, soporte tecnológico y automatización de procesos con foco en datos confiables.",
+      en: "Report building, information analysis, technology support and process automation focused on reliable data.",
+    },
+  },
+  {
+    role: {
+      es: "Especialista TI / Help Desk",
+      en: "IT Specialist / Help Desk",
+    },
+    company: "Banco GNB, Citibank y SARCOM",
+    period: { es: "Experiencia previa", en: "Previous experience" },
+    detail: {
+      es: "Soporte a usuarios, administración de servicios tecnológicos, resolución de incidentes y operación de plataformas corporativas.",
+      en: "User support, technology service administration, incident resolution and operation of corporate platforms.",
+    },
+  },
+  {
+    role: { es: "Founder / Freelance IT", en: "Founder / Freelance IT" },
+    company: "ItProject",
+    period: { es: "Proyecto propio", en: "Own project" },
+    detail: {
+      es: "Servicios de desarrollo a medida, integración open source, backup, contenedores, diseño web responsive, SEO y análisis de datos.",
+      en: "Custom development, open-source integration, backup, containers, responsive web design, SEO and data analytics services.",
+    },
+  },
+];
+
+const principles = [
+  {
+    es: "Diseño orientado a disponibilidad, seguridad y operación real.",
+    en: "Design focused on availability, security and real operations.",
+  },
+  {
+    es: "Documentación clara para auditoría, soporte y continuidad.",
+    en: "Clear documentation for audit, support and continuity.",
+  },
+  {
+    es: "Automatización donde reduce errores y mejora tiempos de respuesta.",
+    en: "Automation where it reduces errors and improves response times.",
+  },
+  {
+    es: "Reportes útiles para decisiones, no solo gráficos decorativos.",
+    en: "Useful reports for decision-making, not just decorative charts.",
+  },
+];
+
+const valueSteps = [
+  {
+    number: "01",
+    label: { es: "Diagnóstico técnico", en: "Technical assessment" },
+  },
+  {
+    number: "02",
+    label: { es: "Diseño y documentación", en: "Design and documentation" },
+  },
+  {
+    number: "03",
+    label: { es: "Implementación segura", en: "Secure implementation" },
+  },
+  {
+    number: "04",
+    label: { es: "Medición con datos", en: "Data-driven measurement" },
+  },
+];
+---
+
+<Layout>
+  <header class="site-header">
+    <nav
+      class="nav container"
+      aria-label="Navegación principal"
+      data-aria-es="Navegación principal"
+      data-aria-en="Main navigation"
+    >
+      <a
+        class="brand"
+        href="#inicio"
+        aria-label="Ir al inicio"
+        data-aria-es="Ir al inicio"
+        data-aria-en="Go to home"
+      >
+        <span class="brand-mark">CQ</span>
+        <span>
+          <strong>Cristhian Quiñonez</strong>
+          <small
+            data-i18n
+            data-es="Infra · Seguridad · Datos"
+            data-en="Infra · Security · Data">Infra · Seguridad · Datos</small
+          >
+        </span>
+      </a>
+
+      <div
+        class="nav-links"
+        aria-label="Secciones"
+        data-aria-es="Secciones"
+        data-aria-en="Sections"
+      >
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              data-i18n
+              data-es={item.label.es}
+              data-en={item.label.en}
+            >
+              {item.label.es}
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="nav-actions">
+        <button
+          class="language-toggle"
+          type="button"
+          aria-label="Cambiar idioma"
+          data-language-toggle
+          data-aria-es="Cambiar idioma"
+          data-aria-en="Change language"
+        >
+          <span aria-hidden="true">🌐</span>
+          <span data-language-label>ES</span>
+        </button>
+
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Cambiar tema"
+          data-theme-toggle
+          data-aria-es="Cambiar tema"
+          data-aria-en="Change theme"
+        >
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+          <span data-theme-label>Oscuro</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero container">
+      <div class="hero-copy">
+        <span
+          class="availability"
+          data-i18n
+          data-es="Disponible para proyectos de infraestructura, datos y desarrollo"
+          data-en="Available for infrastructure, data and development projects"
+          >Disponible para proyectos de infraestructura, datos y desarrollo</span
+        >
+        <h1>
+          <span
+            data-i18n
+            data-es="Transformo infraestructura, seguridad y datos en"
+            data-en="I turn infrastructure, security and data into"
+            >Transformo infraestructura, seguridad y datos en</span
+          >
+          <span
+            class="gradient-text"
+            data-i18n
+            data-es="soluciones que funcionan en producción."
+            data-en="solutions that work in production."
+            >soluciones que funcionan en producción.</span
+          >
+        </h1>
+        <p
+          class="hero-lead"
+          data-i18n
+          data-es="Soy profesional TI con experiencia en infraestructura corporativa, ciberseguridad, análisis de datos y desarrollo web. Combino operación técnica, automatización y visión de negocio para entregar plataformas confiables, documentadas y escalables."
+          data-en="I am an IT professional with experience in corporate infrastructure, cybersecurity, data analytics and web development. I combine technical operations, automation and business vision to deliver reliable, documented and scalable platforms."
+        >
+          Soy profesional TI con experiencia en infraestructura corporativa,
+          ciberseguridad, análisis de datos y desarrollo web. Combino operación
+          técnica, automatización y visión de negocio para entregar plataformas
+          confiables, documentadas y escalables.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            class="btn btn-primary"
+            href="#proyectos"
+            data-i18n
+            data-es="Ver proyectos"
+            data-en="View projects">Ver proyectos</a
+          >
+          <a
+            class="btn btn-soft"
+            href={linkedinUrl}
+            target="_blank"
+            rel="noreferrer">LinkedIn</a
+          >
+          <a
+            class="btn"
+            href={emailUrl}
+            data-i18n
+            data-es="Contactar"
+            data-en="Contact me">Contactar</a
+          >
+        </div>
+
+        <ul
+          class="hero-tags chip-list"
+          aria-label="Áreas principales"
+          data-aria-es="Áreas principales"
+          data-aria-en="Main areas"
+        >
+          <li class="chip">FortiGate / FortiPAM</li>
+          <li class="chip">SQL Server / Power BI</li>
+          <li class="chip">Next.js / NestJS</li>
+          <li class="chip">CIS Controls</li>
+        </ul>
+      </div>
+
+      <aside
+        class="hero-card glass"
+        aria-label="Resumen profesional"
+        data-aria-es="Resumen profesional"
+        data-aria-en="Professional summary"
+      >
+        <figure class="profile-orb">
+          <img
+            src="/profile-cristhian.jpg"
+            alt="Cristhian Quiñonez con traje en su graduación"
+            loading="eager"
+            decoding="async"
+          />
+          <figcaption class="profile-badge">
+            <strong>Cristhian Quiñonez</strong>
+          </figcaption>
+        </figure>
+        <div>
+          <p
+            class="card-kicker"
+            data-i18n
+            data-es="Perfil profesional"
+            data-en="Professional profile"
+          >
+            Perfil profesional
+          </p>
+          <h2
+            data-i18n
+            data-es="Analista de Infraestructura con base fuerte en datos y desarrollo."
+            data-en="Infrastructure Analyst with a strong foundation in data and development."
+          >
+            Analista de Infraestructura con base fuerte en datos y desarrollo.
+          </h2>
+          <p
+            data-i18n
+            data-es="Perfil híbrido: administración de plataformas, seguridad, automatización, desarrollo de APIs y construcción de reportes ejecutivos."
+            data-en="Hybrid profile: platform administration, security, automation, API development and executive reporting."
+          >
+            Perfil híbrido: administración de plataformas, seguridad,
+            automatización, desarrollo de APIs y construcción de reportes
+            ejecutivos.
+          </p>
+        </div>
+        <div class="mini-stack">
+          <span
+            data-i18n
+            data-es="Infraestructura crítica"
+            data-en="Critical infrastructure">Infraestructura crítica</span
+          >
+          <span data-i18n data-es="Automatización TI" data-en="IT automation"
+            >Automatización TI</span
+          >
+          <span data-i18n data-es="Dashboards" data-en="Dashboards"
+            >Dashboards</span
+          >
+          <span data-i18n data-es="APIs" data-en="APIs">APIs</span>
+        </div>
+      </aside>
+    </section>
+
+    <section
+      class="stats container"
+      aria-label="Resumen de capacidades"
+      data-aria-es="Resumen de capacidades"
+      data-aria-en="Capability summary"
+    >
+      {
+        highlights.map((item) => (
+          <article class="stat-card card">
+            <strong>{item.value}</strong>
+            <span data-i18n data-es={item.label.es} data-en={item.label.en}>
+              {item.label.es}
+            </span>
+          </article>
+        ))
+      }
+    </section>
+
+    <section id="perfil" class="section profile-section">
+      <div class="container profile-grid">
+        <div class="section-title">
+          <span class="eyebrow" data-i18n data-es="Perfil" data-en="Profile"
+            >Perfil</span
+          >
+          <h2
+            data-i18n
+            data-es="Un perfil técnico preparado para resolver problemas reales."
+            data-en="A technical profile prepared to solve real-world problems."
+          >
+            Un perfil técnico preparado para resolver problemas reales.
+          </h2>
+          <p
+            data-i18n
+            data-es="Mi enfoque une infraestructura, seguridad, desarrollo y datos. Esto me permite entender el problema completo: desde servidores, redes y accesos, hasta aplicaciones, integraciones, bases de datos y reportes para toma de decisiones."
+            data-en="My approach connects infrastructure, security, development and data. This helps me understand the full problem: from servers, networks and access, to applications, integrations, databases and decision-making reports."
+          >
+            Mi enfoque une infraestructura, seguridad, desarrollo y datos. Esto
+            me permite entender el problema completo: desde servidores, redes y
+            accesos, hasta aplicaciones, integraciones, bases de datos y
+            reportes para toma de decisiones.
+          </p>
+        </div>
+
+        <div class="principles card">
+          {
+            principles.map((principle) => (
+              <div class="principle-item">
+                <span aria-hidden="true">✓</span>
+                <p data-i18n data-es={principle.es} data-en={principle.en}>
+                  {principle.es}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section container">
+      <div class="section-title">
+        <span class="eyebrow" data-i18n data-es="Skills" data-en="Skills"
+          >Skills</span
+        >
+        <h2
+          data-i18n
+          data-es="Stack técnico organizado por impacto."
+          data-en="Technical stack organized by impact."
+        >
+          Stack técnico organizado por impacto.
+        </h2>
+        <p
+          data-i18n
+          data-es="Tecnologías y prácticas que uso para implementar, operar, proteger, integrar y medir plataformas empresariales."
+          data-en="Technologies and practices I use to implement, operate, protect, integrate and measure business platforms."
+        >
+          Tecnologías y prácticas que uso para implementar, operar, proteger,
+          integrar y medir plataformas empresariales.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        {
+          skills.map((skill) => (
+            <article class="skill-card card">
+              <div class="skill-heading">
+                <span class="skill-icon" aria-hidden="true">
+                  {skill.icon}
+                </span>
+                <h3 data-i18n data-es={skill.title.es} data-en={skill.title.en}>
+                  {skill.title.es}
+                </h3>
+              </div>
+              <ul class="chip-list">
+                {skill.items.map((item) => (
+                  <li class="chip">{item}</li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section id="proyectos" class="section projects-section">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow" data-i18n data-es="Proyectos" data-en="Projects"
+            >Proyectos</span
+          >
+          <h2
+            data-i18n
+            data-es="Casos que muestran capacidad técnica y criterio de negocio."
+            data-en="Cases that show technical capability and business judgment."
+          >
+            Casos que muestran capacidad técnica y criterio de negocio.
+          </h2>
+          <p
+            data-i18n
+            data-es="Una selección de iniciativas alineadas a infraestructura, seguridad, datos, automatización y desarrollo de software."
+            data-en="A selection of initiatives aligned with infrastructure, security, data, automation and software development."
+          >
+            Una selección de iniciativas alineadas a infraestructura, seguridad,
+            datos, automatización y desarrollo de software.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          {
+            projects.map((project) => (
+              <article class="project-card card">
+                <span
+                  class="project-tag"
+                  data-i18n
+                  data-es={project.tag.es}
+                  data-en={project.tag.en}
+                >
+                  {project.tag.es}
+                </span>
+                <h3
+                  data-i18n
+                  data-es={project.title.es}
+                  data-en={project.title.en}
+                >
+                  {project.title.es}
+                </h3>
+                <p
+                  data-i18n
+                  data-es={project.description.es}
+                  data-en={project.description.en}
+                >
+                  {project.description.es}
+                </p>
+                <ul class="project-stack">
+                  {project.stack.map((tech) => (
+                    <li>{tech}</li>
+                  ))}
+                </ul>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia" class="section container">
+      <div class="section-title">
+        <span
+          class="eyebrow"
+          data-i18n
+          data-es="Experiencia"
+          data-en="Experience">Experiencia</span
+        >
+        <h2
+          data-i18n
+          data-es="Trayectoria en ambientes corporativos, banca, ONG y proyectos propios."
+          data-en="Background in corporate environments, banking, NGOs and own projects."
+        >
+          Trayectoria en ambientes corporativos, banca, ONG y proyectos propios.
+        </h2>
+        <p
+          data-i18n
+          data-es="Experiencia práctica en soporte, infraestructura, datos, desarrollo y seguridad, con foco en continuidad operativa y mejora de procesos."
+          data-en="Hands-on experience in support, infrastructure, data, development and security, focused on operational continuity and process improvement."
+        >
+          Experiencia práctica en soporte, infraestructura, datos, desarrollo y
+          seguridad, con foco en continuidad operativa y mejora de procesos.
+        </p>
+      </div>
+
+      <div class="timeline">
+        {
+          experience.map((job) => (
+            <article class="timeline-item card">
+              <div class="timeline-dot" aria-hidden="true" />
+              <div class="timeline-content">
+                <span data-i18n data-es={job.period.es} data-en={job.period.en}>
+                  {job.period.es}
+                </span>
+                <h3 data-i18n data-es={job.role.es} data-en={job.role.en}>
+                  {job.role.es}
+                </h3>
+                <strong>{job.company}</strong>
+                <p data-i18n data-es={job.detail.es} data-en={job.detail.en}>
+                  {job.detail.es}
+                </p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section container value-section">
+      <div class="value-card glass">
+        <div>
+          <span
+            class="eyebrow"
+            data-i18n
+            data-es="Diferencial"
+            data-en="Value proposition">Diferencial</span
+          >
+          <h2
+            data-i18n
+            data-es="Infraestructura + datos + desarrollo en una sola mirada."
+            data-en="Infrastructure + data + development in one vision."
+          >
+            Infraestructura + datos + desarrollo en una sola mirada.
+          </h2>
+          <p
+            data-i18n
+            data-es="Puedo participar desde el diseño técnico, la documentación y la implementación, hasta la automatización, la integración con sistemas y la construcción de reportes para seguimiento ejecutivo."
+            data-en="I can contribute from technical design, documentation and implementation to automation, system integration and executive reporting."
+          >
+            Puedo participar desde el diseño técnico, la documentación y la
+            implementación, hasta la automatización, la integración con sistemas
+            y la construcción de reportes para seguimiento ejecutivo.
+          </p>
+        </div>
+        <div class="value-list">
+          {
+            valueSteps.map((step) => (
+              <div>
+                <strong>{step.number}</strong>
+                <span data-i18n data-es={step.label.es} data-en={step.label.en}>
+                  {step.label.es}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section contact-section">
+      <div class="container contact-card glass">
+        <div>
+          <span class="eyebrow" data-i18n data-es="Contacto" data-en="Contact"
+            >Contacto</span
+          >
+          <h2
+            data-i18n
+            data-es="¿Trabajamos en una solución?"
+            data-en="Shall we build a solution?"
+          >
+            ¿Trabajamos en una solución?
+          </h2>
+          <p
+            data-i18n
+            data-es="Puedo ayudarte con arquitectura de infraestructura, hardening, automatización, integración de sistemas, dashboards o desarrollo web empresarial."
+            data-en="I can help with infrastructure architecture, hardening, automation, system integration, dashboards or business web development."
+          >
+            Puedo ayudarte con arquitectura de infraestructura, hardening,
+            automatización, integración de sistemas, dashboards o desarrollo web
+            empresarial.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a
+            class="btn btn-primary"
+            href={emailUrl}
+            data-i18n
+            data-es="Enviar correo"
+            data-en="Send email">Enviar correo</a
+          >
+          <a
+            class="btn btn-soft"
+            href={linkedinUrl}
+            target="_blank"
+            rel="noreferrer"
+            data-i18n
+            data-es="Ver LinkedIn"
+            data-en="View LinkedIn">Ver LinkedIn</a
+          >
+          <a class="btn" href={githubUrl}>GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p
+      data-i18n
+      data-es={`© ${new Date().getFullYear()} Cristhian Quiñonez. Diseñado para mostrar experiencia técnica con enfoque profesional.`}
+      data-en={`© ${new Date().getFullYear()} Cristhian Quiñonez. Designed to showcase technical experience with a professional approach.`}
+    >
+      © {new Date().getFullYear()} Cristhian Quiñonez. Diseñado para mostrar experiencia
+      técnica con enfoque profesional.
+    </p>
+    <a
+      href="#inicio"
+      data-i18n
+      data-es="Volver arriba ↑"
+      data-en="Back to top ↑">Volver arriba ↑</a
+    >
+  </footer>
+
+  <script is:inline>
+    const themeButton = document.querySelector("[data-theme-toggle]");
+    const themeLabel = document.querySelector("[data-theme-label]");
+    const themeIcon = document.querySelector(".theme-icon");
+    const languageButton = document.querySelector("[data-language-toggle]");
+    const languageLabel = document.querySelector("[data-language-label]");
+
+    const metaCopy = {
+      es: {
+        title: "Cristhian Quiñonez | Infraestructura, Seguridad y Datos",
+        description:
+          "Portafolio profesional de Cristhian Quiñonez: infraestructura, ciberseguridad, desarrollo web, análisis de datos y automatización TI.",
+        dark: "Oscuro",
+        light: "Claro",
+      },
+      en: {
+        title: "Cristhian Quiñonez | Infrastructure, Security and Data",
+        description:
+          "Professional portfolio of Cristhian Quiñonez: infrastructure, cybersecurity, web development, data analytics and IT automation.",
+        dark: "Dark",
+        light: "Light",
+      },
+    };
+
+    const getLanguage = () =>
+      localStorage.getItem("language") === "en" ? "en" : "es";
+
+    const syncAria = (lang) => {
+      document
+        .querySelectorAll("[data-aria-es][data-aria-en]")
+        .forEach((element) => {
+          const value =
+            lang === "en" ? element.dataset.ariaEn : element.dataset.ariaEs;
+          if (value) element.setAttribute("aria-label", value);
+        });
+    };
+
+    const syncThemeText = () => {
+      const lang = getLanguage();
+      const current = document.documentElement.dataset.theme || "dark";
+      if (themeLabel)
+        themeLabel.textContent =
+          current === "dark" ? metaCopy[lang].dark : metaCopy[lang].light;
+      if (themeIcon) themeIcon.textContent = current === "dark" ? "🌙" : "☀️";
+    };
+
+    const setLanguage = (lang) => {
+      const nextLang = lang === "en" ? "en" : "es";
+      localStorage.setItem("language", nextLang);
+      document.documentElement.lang = nextLang;
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const value =
+          nextLang === "en" ? element.dataset.en : element.dataset.es;
+        if (value) element.textContent = value;
+      });
+
+      document.title = metaCopy[nextLang].title;
+      const description = document.querySelector('meta[name="description"]');
+      if (description)
+        description.setAttribute("content", metaCopy[nextLang].description);
+      if (languageLabel) languageLabel.textContent = nextLang.toUpperCase();
+      syncAria(nextLang);
+      syncThemeText();
+    };
+
+    setLanguage(getLanguage());
+
+    themeButton?.addEventListener("click", () => {
+      const next =
+        document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem("theme", next);
+      syncThemeText();
+    });
+
+    languageButton?.addEventListener("click", () => {
+      const nextLang = getLanguage() === "es" ? "en" : "es";
+      setLanguage(nextLang);
+    });
+  </script>
+</Layout>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding: 14px 0;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(18px);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-width: max-content;
+    color: var(--text-strong);
+    text-decoration: none;
+  }
+
+  .brand-mark {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: linear-gradient(
+      135deg,
+      var(--primary-strong),
+      var(--secondary)
+    );
+    color: white;
+    font-weight: 900;
+    box-shadow: 0 16px 40px rgba(var(--primary-rgb), 0.28);
+  }
+
+  .brand strong,
+  .brand small {
+    display: block;
+  }
+
+  .brand small {
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 0.78rem;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+  }
+
+  .nav-links a {
+    padding: 9px 12px;
+    border-radius: 999px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 800;
+    transition:
+      color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--text-strong);
+    background: var(--surface-muted);
+  }
+
+  .nav-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .theme-toggle,
+  .language-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-strong);
+    cursor: pointer;
+    font-weight: 800;
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .theme-toggle:hover,
+  .language-toggle:hover {
+    transform: translateY(-2px);
+    border-color: rgba(var(--primary-rgb), 0.46);
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.62fr);
+    gap: 34px;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 72px 0 38px;
+  }
+
+  .availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding: 9px 13px;
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
+    border-radius: 999px;
+    background: rgba(var(--accent-rgb), 0.1);
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 800;
+  }
+
+  .availability::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 7px rgba(var(--accent-rgb), 0.14);
+  }
+
+  .hero h1 {
+    max-width: 860px;
+    margin-bottom: 20px;
+    font-size: clamp(2.75rem, 8vw, 6.6rem);
+    line-height: 0.93;
+  }
+
+  .hero h1 span {
+    display: block;
+  }
+
+  .hero-lead {
+    max-width: 760px;
+    margin-bottom: 30px;
+    font-size: clamp(1.02rem, 2vw, 1.22rem);
+  }
+
+  .hero-actions,
+  .contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero-actions {
+    margin-bottom: 24px;
+  }
+
+  .hero-tags {
+    max-width: 780px;
+  }
+
+  .hero-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    min-height: 540px;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 28px;
+    border-radius: var(--radius-lg);
+  }
+
+  .hero-card::before {
+    content: "";
+    position: absolute;
+    inset: -30% -40% auto auto;
+    width: 340px;
+    height: 340px;
+    border-radius: 999px;
+    background: radial-gradient(
+      circle,
+      rgba(var(--primary-rgb), 0.32),
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  .profile-orb {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: min(100%, 340px);
+    aspect-ratio: 1;
+    margin: 14px auto 0;
+    border: 1px solid rgba(var(--primary-rgb), 0.38);
+    border-radius: 32px;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(var(--primary-rgb), 0.18),
+        rgba(var(--secondary-rgb), 0.22)
+      ),
+      var(--surface-muted);
+    box-shadow:
+      0 26px 70px rgba(var(--primary-rgb), 0.22),
+      inset 0 0 80px rgba(var(--primary-rgb), 0.12);
+  }
+
+  .profile-orb::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(to top, rgba(0, 0, 0, 0.62), transparent 58%),
+      radial-gradient(
+        circle at 28% 16%,
+        rgba(255, 255, 255, 0.18),
+        transparent 24rem
+      );
+    pointer-events: none;
+  }
+
+  .profile-orb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 42% 50%;
+    transform: scale(1.02);
+  }
+
+  .profile-badge {
+    position: absolute;
+    z-index: 2;
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    display: grid;
+    gap: 3px;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.48);
+    color: #fff;
+    backdrop-filter: blur(12px);
+  }
+
+  .profile-badge strong {
+    font-size: 0.98rem;
+    letter-spacing: -0.02em;
+  }
+
+  .profile-badge span {
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 0.78rem;
+    font-weight: 800;
+  }
+
+  .card-kicker {
+    margin-bottom: 8px;
+    color: var(--primary);
+    font-size: 0.82rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .hero-card h2 {
+    margin-bottom: 12px;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+  }
+
+  .mini-stack {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .mini-stack span,
+  .value-list div,
+  .principle-item {
+    border: 1px solid var(--line);
+    background: var(--surface-muted);
+  }
+
+  .mini-stack span {
+    padding: 13px;
+    border-radius: 16px;
+    color: var(--text-strong);
+    font-weight: 800;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: -18px;
+  }
+
+  .stat-card,
+  .skill-card,
+  .project-card {
+    padding: 22px;
+  }
+
+  .stat-card strong {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-strong);
+    font-size: 2.2rem;
+    line-height: 1;
+    letter-spacing: -0.07em;
+  }
+
+  .stat-card span {
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .profile-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.7fr);
+    gap: 30px;
+    align-items: start;
+  }
+
+  .principles {
+    display: grid;
+    gap: 14px;
+    padding: 20px;
+  }
+
+  .principle-item {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 12px;
+    align-items: start;
+    padding: 16px;
+    border-radius: 18px;
+    color: var(--text);
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+
+  .principle-item span {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    font-weight: 900;
+  }
+
+  .principle-item p {
+    margin: 0;
+  }
+
+  .skills-grid,
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .skill-card,
+  .project-card {
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .skill-card:hover,
+  .project-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(var(--primary-rgb), 0.44);
+  }
+
+  .skill-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .skill-icon {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    background: var(--surface-muted);
+    border: 1px solid var(--line);
+  }
+
+  .skill-heading h3,
+  .project-card h3 {
+    margin: 0;
+    font-size: 1.35rem;
+  }
+
+  .project-tag {
+    display: inline-flex;
+    margin-bottom: 14px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: rgba(var(--primary-rgb), 0.12);
+    color: var(--primary);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .project-card p {
+    margin-bottom: 18px;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .project-stack li {
+    padding: 7px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    color: var(--text-strong);
+    font-size: 0.82rem;
+    font-weight: 800;
+  }
+
+  .timeline {
+    position: relative;
+    display: grid;
+    gap: 18px;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 14px;
+    bottom: 14px;
+    width: 2px;
+    background: linear-gradient(var(--primary), var(--secondary));
+    opacity: 0.5;
+  }
+
+  .timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 18px;
+    padding: 22px;
+  }
+
+  .timeline-dot {
+    position: relative;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    border: 7px solid var(--surface-strong);
+    border-radius: 999px;
+    background: var(--primary);
+    box-shadow:
+      0 0 0 1px var(--line),
+      0 0 40px rgba(var(--primary-rgb), 0.36);
+  }
+
+  .timeline-content span {
+    display: inline-flex;
+    margin-bottom: 8px;
+    color: var(--primary);
+    font-size: 0.82rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .timeline-content h3 {
+    margin-bottom: 6px;
+    font-size: 1.45rem;
+  }
+
+  .timeline-content strong {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-strong);
+  }
+
+  .timeline-content p {
+    margin-bottom: 0;
+  }
+
+  .value-card,
+  .contact-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+    gap: 28px;
+    align-items: center;
+    padding: clamp(24px, 4vw, 44px);
+    border-radius: var(--radius-lg);
+  }
+
+  .value-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .value-list div {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .value-list strong {
+    color: var(--primary);
+    font-size: 1.4rem;
+    letter-spacing: -0.05em;
+  }
+
+  .value-list span {
+    color: var(--text-strong);
+    font-weight: 900;
+  }
+
+  .contact-card {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 28px 0 40px;
+    border-top: 1px solid var(--line);
+  }
+
+  .footer p {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .footer a {
+    color: var(--text-strong);
+    text-decoration: none;
+    font-weight: 900;
+  }
+
+  @media (max-width: 1060px) {
+    .nav {
+      flex-wrap: wrap;
+    }
+
+    .nav-links {
+      order: 3;
+      width: 100%;
+      justify-content: center;
+      overflow-x: auto;
+    }
+
+    .hero,
+    .profile-grid,
+    .value-card,
+    .contact-card {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+      min-height: auto;
+    }
+
+    .stats,
+    .skills-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .nav {
+      align-items: flex-start;
+    }
+
+    .nav-actions {
+      margin-left: auto;
+    }
+
+    .theme-toggle span:last-child {
+      display: none;
+    }
+
+    .hero {
+      padding-top: 46px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.45rem, 17vw, 4rem);
+    }
+
+    .hero-actions,
+    .contact-actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .stats,
+    .skills-grid,
+    .projects-grid,
+    .mini-stack {
+      grid-template-columns: 1fr;
+    }
+
+    .timeline::before {
+      display: none;
+    }
+
+    .timeline-item {
+      grid-template-columns: 1fr;
+    }
+
+    .timeline-dot {
+      display: none;
+    }
+
+    .footer {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>
